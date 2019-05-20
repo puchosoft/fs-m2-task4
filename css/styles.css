@@ -1,0 +1,46 @@
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.navbar-default, .footer-copyright{
+  background-color:#e0e0e0;
+}
+
+.navbar-default .nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus , a.dropdown-item:hover {
+  background-color:darkgrey;
+}
+
+li a, li a:hover{
+    color:inherit;
+}
+
+.card-body p, .container p{
+  text-align: justify;
+  text-indent: 2em;
+}
+
+th{
+  color:white;
+  background-color:black;
+}
+
+.table-hover tr:hover td{
+  color:white;
+  background-color:darkgrey;
+}
+
+table{
+  table-layout:fixed;
+}
+
+td, th {
+  text-align: center;
+}
+
+tr td:nth-Child(1){
+  text-align:left;
+}
+
+hr {
+  border:1px solid darkgrey;
+}

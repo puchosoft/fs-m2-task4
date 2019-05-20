@@ -1,0 +1,18 @@
+Buen trabajo en las páginas de demostración. Sencillo pero limpio. A TGIF le gustaría ver que funcione con datos en vivo pronto, pero a continuación se demuestra que podemos hacer algunos cálculos con los datos que van más allá de lo que ProPublic proporciona.
+
+En particular, surgen muchas preguntas al comparar cómo votan los miembros de cada partido. Les gustaría algunas estadísticas simples recopiladas y mostradas en una tabla agradable y legible en las páginas web para el Senado y la Cámara de Representantes. Les gustaría que juntaran mesas con:
+
+El número de demócratas, republicanos e independientes.
+cómo los demócratas y los republicanos se comparan, en promedio, para votar con su partido
+qué miembros con más frecuencia no votan con su partido, cuáles con mayor frecuencia votan con su partido
+qué miembros han perdido la mayoría de los votos, los que han perdido menos
+Tuve que aclararles qué significaban para las listas en los dos últimos puntos con viñetas. Lo que suena simple en inglés es algo complicado en detalle.
+
+Por ejemplo, considere los votos perdidos. No quieren solo encontrar a una persona que más extrañe. Quieren una lista de los peores 10%. Pero le dije que si solo clasificaba por votos perdidos y tomaba el 10% superior, entonces podría dejar a algunas personas fuera de la lista que faltaban tan a menudo como las que están incluidas en la lista. Estuvieron de acuerdo en que eso no estaba bien. Finalmente acordamos que desea seguir recolectando personas hasta que alcance el 10%, pero si ha incluido a alguien que, por ejemplo, perdió el 22% de los votos, también debe incluir a todos los demás que no hayan obtenido el 22% de los votos.
+
+El mismo algoritmo debe aplicarse a todas las listas en los dos últimos elementos. Mientras que eso describe lo que quieren, les dejaré que encuentren una manera de calcularlo y mantengan el código limpio y fácil de mantener.
+
+El diseñador de nuestro sitio web ha reunido algunos esquemas que puedes usar para construir estas páginas. He adjuntado los wireframes, así como un par de páginas html básicas con contenido para comenzar, a este correo electrónico. Envíame un archivo zip del sitio web una vez que haya terminado.
+
+Gracias,
+Paula

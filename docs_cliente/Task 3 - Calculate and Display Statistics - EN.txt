@@ -1,0 +1,25 @@
+FROM: Paula Davis 
+Subject: InSider app, statistics page
+
+Good job on the demo pages. Simple but clean. TGIF would like to see it working with live data soon, but next up is demonstrating we can do some calculations with the data that go beyond what ProPublic provides.
+
+In particular, many questions come up when comparing how the members of each party vote. They’d like some simple statistics gathered and displayed in a nice readable table on web pages for the Senate and the House.  They would like you to put together tables with:
+
+the number of Democrats, Republicans and Independents
+how Democrats and Republicans compare, on average, for voting with their party
+which members most often do not vote with their party, which ones most often do vote with their party
+which members have missed the most votes, which have missed the least
+I had to get clarification from them on what they meant for the lists in the last two bulleted items. What sounds simple in English is kind of complicated in detail.
+
+For example, consider missed votes. They don't want to just find one person who missed the most. They want a list of the worst 10%.  But I said if you just sort by missed votes and take the top 10%, then you might leave some people off the list who missed just as often as those who are included on the list. They agreed that wasn't right. We finally agreed that you want to keep collecting people until you hit 10%, but if you've included someone who, say, missed 22% of the votes then you should also include everyone else who missed 22% of the votes.
+
+The same algorithm should apply to all of the lists in the last two items. While that describes what they want, I'll leave it you to figure out a way to calculate it, and keep the code clean and easy to maintain.
+
+Our website designer has put together some wireframes that you can use to build these pages out. I've attached the wireframes, as well as a couple basic html pages with content to get you started, to this email.  Send me a zip file of the website once you are done.
+
+Thanks,
+Paula
+ 
+Paula Davis
+Team Lead
+Code of the Web
