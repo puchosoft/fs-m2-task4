@@ -1,22 +1,20 @@
-// Crea un array con los miembros de la camara
-var miembros = data.results[0].members;
+// Construye la lista de opciones del 'Filter by State'
+function setDropStates(states){
+  var dropStates = document.getElementById("dropStates");
 
-// Agrega listeners que atiendan los cambios de los checkboxes
-var query = document.querySelectorAll('input[name=party]');
-query.forEach(input => input.onchange = filtraYMuestraTabla);
+  // Agrega listener que atiende el cambio del dropdown
+  dropStates.onchange = filtraYMuestraTabla;
 
-// Crea un array con todos los estados existentes en la base
-var states = miembros.map(miembro => miembro.state);
+  // Agrega una opcion al 'Filter by State' por cada estado de la lista
+  states.forEach(state => {
+    var option = document.createElement("option");
+    option.value = state;
+    option.innerText = state;
+    dropStates.appendChild(option);
+  })
+}
 
-// Reduce el array a los estados unicos y los ordena
-states = states.filter((state, i, array) => array.indexOf(state) === i);
-states.sort();
-
-// Genera las opciones del dropdown "Filter by State"
-setDropStates(states);
-
-filtraYMuestraTabla();
-
+// Muestra una tabla a partir de un array con los miembros filtrados x 'Filter by Party' y 'Filter by State'
 function filtraYMuestraTabla(){
   // Lee los checkboxes seleccionados del "Filter by Party"
   var query = document.querySelectorAll('input[name=party]:checked');
@@ -40,19 +38,26 @@ function filtraYMuestraTabla(){
     mFiltrados = mFiltrados.filter(m => m.state == state);
   }
 
-  // Muestra la tabla
+  // Muestra la tabla de miembros filtrados
   setTable(mFiltrados);
 }
 
-function setDropStates(states){
-  var dropStates = document.getElementById("dropStates");
+// Configura el comportamiento de los filtros de la tabla de miembros y la muestra
+function initTable(){
+  // Agrega listeners que atiendan los cambios de los checkboxes
+  var query = document.querySelectorAll('input[name=party]');
+  query.forEach(input => input.onchange = filtraYMuestraTabla);
 
-  dropStates.onchange = filtraYMuestraTabla;
+  // Crea un array con todos los estados existentes en la base
+  var states = miembros.map(miembro => miembro.state);
 
-  states.forEach(state => {
-    var option = document.createElement("option");
-    option.value = state;
-    option.innerText = state;
-    dropStates.appendChild(option);
-  })
+  // Reduce el array a los estados unicos y los ordena
+  states = states.filter((state, i, array) => array.indexOf(state) === i);
+  states.sort();
+
+  // Genera las opciones del dropdown "Filter by State"
+  setDropStates(states);
+
+  filtraYMuestraTabla();
 }
+

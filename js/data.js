@@ -1,31 +1,24 @@
 var chamber = document.currentScript.getAttribute('chamber');
 
-var url = chamber=='house'?'https://api.propublica.org/congress/v1/113/house/members.json':'https://api.propublica.org/congress/v1/113/senate/members.json';
+// Define un URL segun el parametro 'chamber' pasado al script 'data.js'
+var url = 'https://api.propublica.org/congress/v1/113/'+ chamber +'/members.json';
 
-var init = {
-  headers: {
-    'X-API-Key' : 'WbeUO7MgnKpkg4alDO0EhN0Bu4XbSCTxc84JkbVQ'
-  }
-};
+var APIKey = 'WbeUO7MgnKpkg4alDO0EhN0Bu4XbSCTxc84JkbVQ';
+var myHeaders = new Headers();
+myHeaders.append('X-API-Key',APIKey);
+var init = { headers: myHeaders };
 
-fetch(url,{
-  headers: {
-    'X-API-Key' : 'WbeUO7MgnKpkg4alDO0EhN0Bu4XbSCTxc84JkbVQ'
+fetch(url, init)
+.then(function(response){
+  if(response.ok){
+    response.json().then(function(jsonData){
+      // Crea un array GLOBAL con los miembros de la camara
+      miembros = jsonData.results[0].members;
+      initTable();
+    });
   }
 })
-.then(response => response.json())
-.then(jsonData => {
-  data = jsonData;
-  console.log(data);
+.catch(function(error){
+  console.log('Problema en peticion fetch: ' + error.message);
 });
 
-
-
-
-/*
-fetch( "/users").then(function(response) {
-  console.log('Request succeeded: ' + response.statusText);
-}).catch(function(error) {
-  console.log( "Request failed: " + error.message );
-});
-*/
