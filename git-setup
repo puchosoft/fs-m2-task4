@@ -7,5 +7,5 @@ git config credential.helper manager
 
 # Remotos
 git remote rm origin
-git remote add github http://github.com/puchosoft/fs-m2-task3
+git remote add github http://github.com/puchosoft/fs-m2-task4
 git push --set-upstream github master
