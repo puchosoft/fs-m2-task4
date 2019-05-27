@@ -56,7 +56,3 @@ function setDropStates(states){
     dropStates.appendChild(option);
   })
 }
-
-function nosequehacemos(){
-  console.log("cambio de state");
-}
