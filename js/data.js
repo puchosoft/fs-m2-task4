@@ -30,4 +30,3 @@ fetch(url, init)
     });
 });
 
-
