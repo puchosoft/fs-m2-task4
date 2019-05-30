@@ -14,11 +14,20 @@ fetch(url, init)
     response.json().then(function(jsonData){
       // Crea un array GLOBAL con los miembros de la camara
       miembros = jsonData.results[0].members;
-      initTable();
+      initTables();
     });
   }
 })
+// Si falla la conexion a ProPublica usa un archivo local.
 .catch(function(error){
   console.log('Problema en peticion fetch: ' + error.message);
+  var localfile = 'js/pro-congress-113-'+ chamber +'.js';
+  console.log('Usando el archivo <'+ localfile +'>');
+  $.getScript(localfile,
+    function(){
+                miembros = data.results[0].members;
+                initTables();
+    });
 });
+
 
